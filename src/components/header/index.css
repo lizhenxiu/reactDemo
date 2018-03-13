@@ -1,6 +1,140 @@
+body {
+    background-color: #e1e1e1;
+    font-family: "Microsoft YaHei"
+}
+.ui-logo{height: 30px}
 .ui-header{
     background: #444;
 }
 .navbar-nav{
     color: #fff;
+}
+.ui-content{
+    position: relative;
+    margin-top: 20px;
+}
+.ft14{
+    font-size: 14px;
+}
+.ui-sider-right{
+    background: #fff;
+}
+.ui-content-left{
+    background: #fff;
+}
+@media (min-width: 1200px){
+.container {
+    max-width: 1260px;
+}
+}
+.h-panel .h-header{
+    padding: 10px;
+    background-color: #f6f6f6;
+    border-radius: 3px 3px 0 0;
+}
+.h-panel a.ui-tab.on,.h-panel a.ui-tab.on:hover{
+    background-color: #80bd01;
+    color: #fff;
+    padding: 3px 4px;
+    border-radius: 3px;
+    font-size: 14px;
+}
+.h-panel a.ui-tab,.h-panel a.ui-tab:hover{
+    margin: 0 10px;
+    color: #80bd01;
+    cursor: pointer;
+    font-size: 14px;
+}
+.cell:first-child {
+    border-top: none;
+}
+.cell {
+    background: #fff;
+    position: relative;
+    padding: 10px;
+    font-size: 14px;
+    border-top: 1px solid #f0f0f0;
+    cursor: pointer;
+    overflow: hidden;
+}
+.user-avatar img{
+    width: 30px;
+    height: 30px;
+    border-radius: 3px;
+}
+.cell img {
+    max-width: 100%;
+    vertical-align: middle;
+    border: 0;
+}
+.cell .reply-count {
+    width: 70px;
+    display: inline-block;
+    text-align: center;
+    margin-top: 4px;
+}
+.cell .reply-count .count-of-replies {
+    color: #9e78c0;
+}
+
+.cell .reply-count .count-of-visits {
+    font-size: 10px;
+    color: #b4b4b4;
+}
+.cell .last-time {
+    font-size: 11px;
+    display: inline-block;
+    margin-left: 20px;
+    color: #778087;
+}
+.cell .topic-title-wrapper {
+    white-space: nowrap;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    color: #333;
+}
+.cell .topic-title-wrapper .tag.tab-common {
+    background-color: #e5e5e5;
+    color: #999;
+}
+.cell .topic-title-wrapper .topic-title {
+    margin-left: 4px;
+    max-width: 70%;
+    white-space: nowrap;
+    display: inline-block;
+    vertical-align: middle;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    color: #333;
+    font-size: 14px;
+    line-height: 30px;
+    text-decoration: none;
+}
+.pull-left{
+    float: left;
+}
+.App-content a {
+    text-decoration: none;
+}
+.cell .last-time .user-small-avatar {
+    height: 18px;
+    width: 18px;
+    vertical-align: middle;
+    margin-right: .5em;
+    border-radius: 3px;
+}
+.cell .last-time {
+    font-size: 11px;
+    display: inline-block;
+    margin-left: 20px;
+    color: #778087;
+}
+.pull-right{
+    float: right;
+}
+.topic-title-wrapper .tag {
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-size: 12px;
 }
