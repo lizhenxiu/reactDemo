@@ -138,3 +138,8 @@ body {
     border-radius: 3px;
     font-size: 12px;
 }
+.no-data h5{
+    font-size: 14px;
+    padding: 50px 20px;
+    font-weight: normal;
+}
