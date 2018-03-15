@@ -14,17 +14,17 @@ import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render((
   <Router>
-    <Switch>
-      <Route exact path="/" component={App} />
-      <Route exact path="/getstart" component={App}/>
-      <Route exact path="/api" component={App}/>
-      <Route exact path="/about" component={App}/>
-      <Route path="/tag" component={App}></Route>
-      <Route path="/topic" component={App}></Route> 
-      <Route exact path="/404" component={NotFound} />
-      <Route exact path="/login" component={Login} />
-      <Route component={NotFound} />
-    </Switch>
+     <Switch>
+     <Route exact path="/" component={App} />
+     <Route exact path="/getstart" component={App}/>
+     <Route exact path="/api" component={App}/>
+     <Route exact path="/about" component={App}/>
+     <Route path="/tag" component={App}></Route>
+     <Route path="/topic" component={App}></Route>
+     <Route exact path="/404" component={NotFound} />
+     <Route exact path="/login" component={Login} />
+     <Route component={NotFound} />
+   </Switch>
   </Router>
 ), document.getElementById('root'));
 registerServiceWorker();

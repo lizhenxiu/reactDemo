@@ -38,12 +38,14 @@ body {
     padding: 3px 4px;
     border-radius: 3px;
     font-size: 14px;
+    text-decoration: none;
 }
 .h-panel a.ui-tab,.h-panel a.ui-tab:hover{
     margin: 0 10px;
     color: #80bd01;
     cursor: pointer;
     font-size: 14px;
+    text-decoration: none;
 }
 .cell:first-child {
     border-top: none;

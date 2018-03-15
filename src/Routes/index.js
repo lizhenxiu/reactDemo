@@ -25,12 +25,12 @@ class Routes extends Component{
       <Route exact path="/Getstart" component={Getstart} />
       <Route exact path="/api" component={API} />
       <Route exact path="/about" component={About} />
-      {/* <Route exact path="/tag/:type" component={Home}></Route> */}
-      {/* <Route exact path="/tag/:type" component={Home}></Route>
       <Route exact path="/tag/:type" component={Home}></Route>
       <Route exact path="/tag/:type" component={Home}></Route>
-      <Route exact path="/tag/:type" component={Home}></Route> */}
-      {/* <Route exact path="/topic/:postId" component={Post}></Route> */}
+      <Route exact path="/tag/:type" component={Home}></Route>
+      <Route exact path="/tag/:type" component={Home}></Route>
+      <Route exact path="/tag/:type" component={Home}></Route>
+      <Route exact path="/topic/:postId" component={Post}></Route>
       <Route render={() => ( <Redirect to="/404"></Redirect>)}/>
     </Switch>
     )

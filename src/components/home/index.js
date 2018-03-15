@@ -14,47 +14,47 @@ class Home extends Component {
         }
     }
     componentWillMount() {
-        const type = this.props.match.params.type
+        const type = this.props.match.params.type;
         this.setState({
-            tagType: type || 'all'
-        })
-        this.getPostData(type).then(res => {
-            if (res.status === 200) {
-                this.setState({
-                    postList: res.data.data
-                });
-            } else {
-                console.error(res.statusText)
-            }
-        }).catch(e => {
-            console.warn(e);
+          tagType: type || 'all',
         });
-
-    }
-    componentDidMount() {
-           
-    }
-    componentWillReceiveProps() {
-        const type = this.props.match.params.type
+        this.getPostData(type).then(res => {
+          if (res.status === 200) {
+            this.setState({
+              postList: res.data.data,
+            });
+          } else {
+            console.error(res.statusText);
+          }
+        }).catch(e => {
+          console.warn(e);
+        });
+      }
+    
+      componentDidMount() {
+    
+      }
+    
+      componentWillReceiveProps(nextProps) {
+        const type = nextProps.match.params.type;
         this.setState({
-            tabTypes: type || 'all'
-        })
+          tagType: type || 'all',
+        });
         if (this.state.tagType !== type) {
-            this.getPostData(type).then(res => {
-                if (res.status === 2000) {
-                    this.setState({
-                        postList: res.data.data
-                    })
-                 
-                } else {
-                    console.error(res.statusText)
-                }
-            }).catch(e => {
-                console.warn(e)
-            })
+          this.getPostData(type).then(res => {
+            if (res.status === 200) {
+              this.setState({
+                postList: res.data.data,
+              });
+            } else {
+              console.error(res.statusText);
+            }
+          }).catch(e => {
+            console.warn(e);
+          });
         }
-
-    }
+      }
+    
     getPostData(type) {
         return axios.get('https://cnodejs.org/api/v1/topics',{
                 params: {
@@ -71,33 +71,43 @@ class Home extends Component {
             'ask': '问答',
             'job': '招聘'
         }
-        if (post.tab) {
-            return map['top']
-        }
-        else if (post.good) {
+        if (post.top) {
+            return map['top'];
+          } else if (post.share) {
+            return map['share'];
+          }else if (post.good) {
             return map['good'];
-        } else {
+          }
+          else if (post.ask) {
+            return map['ask'];
+          }else if (post.job) {
+            return map['job'];
+          }
+      
+           else {
             return map[tab];
-        }
+          }
     }
     getRouterTab() {
         const routeList = [
             { type: 'all', path: '/', text: '全部' },
-            { type: 'elite', path: 'tag/elite', text: '精华' },
-            { type: 'share', path: 'tag/share', text: '分享' },
-            { type: 'ask', path: 'tag/ask', text: '问答' },
-            { type: 'jop', path: 'tag/jop', text: '招聘' },
-            { type: 'text', path: 'tag/text', text: '测试' }
-        ]
+            { type: 'good', path: '/tag/good', text: '精华' },
+            { type: 'share', path: '/tag/share', text: '分享' },
+            { type: 'ask', path: '/tag/ask', text: '问答' },
+            { type: 'job', path: '/tag/job', text: '招聘' },
+            { type: 'test', path: '/tag/test', text: '测试' },
+          ]
         return routeList.map((router) => (
-            <Link to={router.path} path={router.path} className={this.state.tagType === router.type ? "ui-tab on" : "ui-tab"}>{router.text}</Link>
+            <Link to={router.path} key={router.path} className={this.state.tagType === router.type ? 'ui-tab on' : 'ui-tab'}>
+            {router.text}
+          </Link>
         ))
     }
     render() {
         // console.log(this.state.postList)
         const listHtml = () => {
             return this.state.postList.map((post, index) => (
-                <div className="cell">
+                <div className="cell" key={post.id}>
                     <a className="user-avatar pull-left">
                         <img src={post.author.avatar_url}  alt="1" />
                     </a>
